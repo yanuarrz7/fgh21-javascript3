@@ -13,12 +13,11 @@ const getMonth = (callback) => {
 }
 
 const showMonth = (err, arr) => {
-    if(err){
-        console.log(err)
+    if(!err){
+        const bulan = arr.map(item => item)
+        console.log(bulan) 
     }else{
-        arr.map((month)=>{
-        console.log(month)
-        })
+         console.log(err.message) 
     }
 }
 getMonth(showMonth);

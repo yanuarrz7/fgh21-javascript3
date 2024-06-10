@@ -1,15 +1,7 @@
-const apiUrl = "https://jsonplaceholder.typicode.com/users"
-
-fetch(apiUrl)
-.then(respon => {
-    if (!respon.ok) {
-        console.log("Respon koneksi tidak baik")
-    }
-    return respon.json()
-})
-.then(namaData => {
-    console.log('Nama Data:', namaData);
+const request = fetch('https:jsonplaceholder.typicode.com/users')
+request.then(res =>{
+  res.json().then(data =>{
+    const names = data.map(people => people.name)
+    console.log(names)
   })
-  .catch(error => {
-    console.error('Error:', error);
-  });
+})
